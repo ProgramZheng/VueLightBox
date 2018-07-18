@@ -1,0 +1,12 @@
+.products > .product > .product-image {
+  width: 80%;
+  height: 300px;
+  border-radius: 21px 21px 0 0; }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s; }
+
+.fade-enter, .fade-leave-to {
+  opacity: 0; }
+
+/*# sourceMappingURL=product.css.map */
