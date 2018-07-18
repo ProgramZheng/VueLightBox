@@ -13,29 +13,33 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app" class="products d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+<section id="app">
+    <div class="products d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
         <div class="product bg-dark text-white mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div class="my-3 py-3">
                 <h2 class="display-5">仙人掌花</h2>
                 <p class="lead">美麗至極</p>
             </div>
-            <img class="product-image" src="images/david-sola-530108-unsplash.jpg" @click="showDialog();">
+            <img class="product-image" :src="images[0]" @click="showLightbox(0);">
         </div>
         <div class="product bg-white text-black mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
             <div class="my-3 py-3">
                 <h2 class="display-5">紅色的花</h2>
-                <p class="lead">棘刺之愛</p>
+                <p class="lead">棘刺之紅</p>
             </div>
-            <img class="product-image" src="images/alex-kalligas-460302-unsplash.jpg" @click="showDialog();">
+            <img class="product-image" :src="images[1]" @click="showLightbox(1);">
         </div>
-        <!-- 圖片放大 -->
-        <transition name="fade">
-            <div v-if="show" class="dialog">
-                qwe
-            </div>
-        </transition>
-
     </div>
+    <!-- 圖片放大 -->
+    <transition name="fade">
+        <div v-if="show" class="lightbox">
+            <div class="content">
+                <img :src="lightboxImage">
+            </div>
+        </div>
+    </transition>
+
+</section>
     <script src="js/product.js"></script>
 </body>
 </html>
