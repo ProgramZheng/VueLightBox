@@ -18,6 +18,11 @@ const app = new Vue({
             let self = this;
             self.show = !self.show;
             self.lightboxImage = self.images[imagesKey];
+
+            //取得body
+            let body = document.body;
+            body.classList.add('lock');
+            console.log(body);
             console.log(self.show);
         }
     }
