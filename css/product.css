@@ -27,7 +27,7 @@
   .lightbox .content {
     width: 90%;
     height: 90%;
-    background: #fff;
+    background: rgba(0, 0, 0, 0.7);
     color: #333;
     margin: auto;
     top: -25%;
@@ -39,11 +39,24 @@
     -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     box-sizing: border-box; }
-    /* line 38, ../sass/product.scss */
-    .lightbox .content img {
+    /* line 37, ../sass/product.scss */
+    .lightbox .content .lightbox-image {
       display: block;
       margin-left: auto;
       margin-right: auto;
       width: 50%;
       max-width: 100%;
-      max-height: 100%; }
+      max-height: 90%; }
+    /* line 45, ../sass/product.scss */
+    .lightbox .content .control-tool {
+      background: white;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      max-width: 100%;
+      max-height: 10%; }
+      /* line 53, ../sass/product.scss */
+      .lightbox .content .control-tool .tool {
+        max-width: 5%;
+        max-height: 5%; }

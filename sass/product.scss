@@ -22,10 +22,9 @@
 	padding-top: 30px;
 	box-sizing: border-box;
 	.content{
-
 		width: 90%;
 		height: 90%;
-		background: #fff;
+		background: rgba(0,0,0,0.7);
 		color: #333;
 		margin: auto;
 		top: -25%;
@@ -35,13 +34,27 @@
 		border: 3px solid #fff;
 		@include box-shadow(0 0 8px rgba(0,0,0,.3));
 		box-sizing: border-box;
-		img {
+		.lightbox-image{
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
 			width: 50%;
 			max-width: 100%;
-			max-height: 100%;
+			max-height: 90%;
+		}
+		.control-tool{
+			background: white;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 50%;
+			max-width: 100%;
+			max-height: 10%;
+			.tool{
+				max-width: 5%;
+				max-height: 5%;
+			}
 		}
 	}
+
 }
