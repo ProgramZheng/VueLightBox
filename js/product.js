@@ -3,6 +3,7 @@ const app = new Vue({
     data(){
         return{
             show:false,
+            controlShow:false,
             images:[],
             lightboxImage:''
         }
@@ -14,16 +15,26 @@ const app = new Vue({
         'images/alex-kalligas-460302-unsplash.jpg');
     },
     methods:{
+        showChangeImage(){
+            let self = this;
+            self.controlShow = !self.controlShow;
+        },
         showLightbox(imagesKey){
             let self = this;
-            self.show = !self.show;
-            self.lightboxImage = self.images[imagesKey];
-
             //取得body
             let body = document.body;
             body.classList.add('lock');
-            console.log(body);
-            console.log(self.show);
+
+            self.show = !self.show;
+            self.lightboxImage = self.images[imagesKey];
+
+            self.showChangeImage();
+            // console.log(lightboxContent);
+            // console.log(self.show);
+        },
+        rotateImage(){
+            let self = this;
+            
         },
         closeLightbox(){
             let self = this;
