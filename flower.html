@@ -32,7 +32,7 @@
     </div>
     <!-- 圖片放大 -->
     <transition name="fade">
-        <div v-if="lightboxShow" class="lightbox">
+        <div v-if="lightboxShow" class="lightbox" @click="showHideControl();">
             <div class="control-tool">
                 <div class="tool">
                     <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI2Ljc5NCAyNi43OTQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI2Ljc5NCAyNi43OTQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4Ij4KPGc+Cgk8cGF0aCBkPSJNMCwyNC43MDhDMCwxNC4zNTgsOC4yNTYsNS45MDEsMTguNjQzLDUuNTY3VjIuMDM4YzAtMC4yNTQsMC4xNTQtMC40OCwwLjM4Ny0wLjU3NmMwLjIzLTAuMDk2LDAuNDk4LTAuMDQxLDAuNjgsMC4xMzUgICBsNi45MDQsNi45MzhjMC4yNCwwLjI0LDAuMjQsMC42MzMtMC4wMDQsMC44NzVsLTYuOTA0LDYuOTE2Yy0wLjE3OCwwLjE4Ni0wLjQ0MywwLjIzOC0wLjY3NiwwLjEzNSAgIGMtMC4yMzItMC4wOS0wLjM4Ny0wLjMxOC0wLjM4Ny0wLjU2OHYtMy45MzJjLTYuNzk5LDAuMjY2LTEyLjI1LDUuODgzLTEyLjI1LDEyLjc5NWMwLDAuMzQ4LTAuMjc5LDAuNjIzLTAuNjIzLDAuNjIzSDAuNjIxICAgQzAuMjc3LDI1LjM3OCwwLDI1LjA1LDAsMjQuNzA4eiIgZmlsbD0iIzAwMDAwMCIvPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
@@ -47,8 +47,8 @@
             </div>
             <transition name="fade">
                 <div v-if="controlShow" class="hide-control">
-                    <div v-if="lightboxImageKey!=0" class="left-item"><div class="prev"></div></div>
-                    <div v-if="lightboxImageKey!=lastImageKey" class="right-item"><div class="next"></div></div>
+                    <div v-if="lightboxImageKey!=0" class="left-item" @click="prevImage();"><div class="prev"></div></div>
+                    <div v-if="lightboxImageKey!=lastImageKey" class="right-item" @click="nextImage();"><div class="next" ></div></div>
                 </div>
             </transition>
         </div>

@@ -21,23 +21,10 @@ const app = new Vue({
         self.lastImageKey = self.images.length-1;
     },
     methods:{
-        checkNowImageKey(){
-            let self = this;
-            // switch (true) {
-            //     case self.lightboxImageKey===firstImageKey:
-            //         self.nowImageKeyStatus = 'first';
-            //         break;
-            //     case self.lightboxImageKey===lastImageKey:
-            //         self.nowImageKeyStatus = 'last';
-            //         break;
-            //     default:
-            //         break;
-            // }
-            // console.log(lastImageKey);
-        },
         showHideControl(){
             let self = this;
             if(!self.canvasStatus){
+                clearTimeout(self.controlTimer);
                 self.controlShow = true;
                 self.controlTimer = setTimeout(function(){
                     self.controlShow = false;
@@ -54,7 +41,6 @@ const app = new Vue({
             self.lightboxImageKey = imagesKey;
             self.lightboxImage = self.images[imagesKey];
 
-            // self.checkNowImageKey();
             self.showHideControl();
             // console.log(lightboxContent);
             // console.log(self.show);
@@ -65,7 +51,17 @@ const app = new Vue({
         },
         prevImage(){
             let self = this;
-
+            self.lightboxImageKey = self.lightboxImageKey-1;
+            if(self.lightboxImageKey>=0){
+                self.lightboxImage = self.images[self.lightboxImageKey];
+            }
+        },
+        nextImage(){
+            let self = this;
+            self.lightboxImageKey = self.lightboxImageKey+1;
+            if(self.lightboxImageKey<=self.lastImageKey){
+                self.lightboxImage = self.images[self.lightboxImageKey];
+            }
         },
         closeLightbox(){
             let self = this;
