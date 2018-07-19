@@ -9,6 +9,7 @@ const app = new Vue({
             lightboxImageKey:0,
             lastImageKey:0,
             lightboxImage:'',
+            imageBoard:null,
             canvasStatus:false
 
         }
@@ -63,10 +64,28 @@ const app = new Vue({
                 self.lightboxImage = self.images[self.lightboxImageKey];
             }
         },
+        enableCanvas(){
+            let self = this;
+            self.canvasStatus = !self.canvasStatus;
+            if(self.canvasStatus){
+                console.log("qqqwew");
+                self.imageBoard = new DrawingBoard.Board('lightboxCanvasContent',{
+                    controls: false,
+                    size: 20,
+                    background: self.lightboxImage,
+                    webStorage: false
+                });
+                console.log(self.imageBoard);
+            }
+            else{
+                self.imageBoard = null;
+            }
+        },
         closeLightbox(){
             let self = this;
             self.lightboxShow = !self.lightboxShow;
             clearTimeout(self.controlTimer);
+            self.canvasStatus = false;
             //取得body
             let body = document.body;
             body.classList.remove('lock');
