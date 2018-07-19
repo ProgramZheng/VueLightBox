@@ -17,7 +17,10 @@ const app = new Vue({
     methods:{
         showChangeImage(){
             let self = this;
-            self.controlShow = !self.controlShow;
+            self.controlShow = true;
+            setTimeout(function(){
+                self.controlShow = false;
+            },3000);
         },
         showLightbox(imagesKey){
             let self = this;
