@@ -36,6 +36,7 @@
     .lightbox > .control-tool > .tool > img {
       background: white;
       border: 2px white;
+      border-radius: 5px;
       border-radius: 5px 5px 0 0;
       height: 42px; }
     /* line 38, ../sass/product.scss */
@@ -46,6 +47,7 @@
     .lightbox > .control-tool > .close-lightbox > img {
       background: white;
       border: 2px white;
+      border-radius: 5px;
       border-radius: 5px 5px 0 0;
       height: 42px; }
   /* line 51, ../sass/product.scss */
@@ -56,9 +58,11 @@
     border: 3px solid #fff;
     height: 90%; }
     /* line 57, ../sass/product.scss */
+    .lightbox > .content > .lightbox-image {
     .lightbox > .content > img {
       width: 100%;
       height: 100%; }
+  /* line 63, ../sass/product.scss */
     /* line 62, ../sass/product.scss */
     .lightbox > .content > canvas {
       width: 100%;
@@ -67,16 +71,20 @@
   .lightbox .hide-control {
     position: fixed;
     width: 100%; }
+    /* line 66, ../sass/product.scss */
     /* line 71, ../sass/product.scss */
     .lightbox .hide-control > .left-item {
       float: left; }
+      /* line 68, ../sass/product.scss */
       /* line 73, ../sass/product.scss */
       .lightbox .hide-control > .left-item > .prev {
         border: 10px solid transparent;
         border-right: 20px solid rgba(0, 0, 0, 0.541); }
+    /* line 73, ../sass/product.scss */
     /* line 78, ../sass/product.scss */
     .lightbox .hide-control > .right-item {
       float: right; }
+      /* line 75, ../sass/product.scss */
       /* line 80, ../sass/product.scss */
       .lightbox .hide-control > .right-item > .next {
         border: 10px solid transparent;

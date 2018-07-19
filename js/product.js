@@ -66,18 +66,31 @@ const app = new Vue({
         },
         enableCanvas(){
             let self = this;
+            self.controlShow = false;
             self.canvasStatus = !self.canvasStatus;
             if(self.canvasStatus){
                 console.log("qqqwew");
-                self.imageBoard = new DrawingBoard.Board('lightboxCanvasContent',{
+                self.imageBoard = new DrawingBoard.Board('lightboxContent',{
                     controls: false,
                     size: 20,
                     background: self.lightboxImage,
-                    webStorage: false
+                    webStorage: false,
+                    droppable: true,
+                    stretchImg: true
                 });
                 console.log(self.imageBoard);
             }
             else{
+                let drawingBoardControls = document.getElementsByClassName("drawing-board-controls");
+                let drawingBoardCanvasWrapper = document.getElementsByClassName("drawing-board-canvas-wrapper");
+
+                for(let i=0; i<drawingBoardControls.length; i++){
+                    drawingBoardControls[i].parentNode.removeChild(drawingBoardControls[i]);
+                }
+
+                for(let i=0; i<drawingBoardCanvasWrapper.length; i++){
+                    drawingBoardCanvasWrapper[i].parentNode.removeChild(drawingBoardCanvasWrapper[i]);
+                }
                 self.imageBoard = null;
             }
         },
