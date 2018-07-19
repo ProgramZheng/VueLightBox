@@ -36,7 +36,7 @@
     .lightbox > .control-tool > .tool > img {
       background: white;
       border: 2px white;
-      border-radius: 5px;
+      border-radius: 5px 5px 0 0;
       height: 42px; }
     /* line 38, ../sass/product.scss */
     .lightbox > .control-tool > .images-count {
@@ -46,7 +46,7 @@
     .lightbox > .control-tool > .close-lightbox > img {
       background: white;
       border: 2px white;
-      border-radius: 5px;
+      border-radius: 5px 5px 0 0;
       height: 42px; }
   /* line 51, ../sass/product.scss */
   .lightbox > .content {
