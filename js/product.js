@@ -17,7 +17,7 @@ const app = new Vue({
         //TODO:編寫AJAX取得圖片
         let self = this;
         self.images.push('images/david-sola-530108-unsplash.jpg',
-        'images/alex-kalligas-460302-unsplash.jpg');
+        'images/alex-kalligas-460302-unsplash.jpg','images/richard-loader-31656-unsplash.jpg');
         self.lastImageKey = self.images.length-1;
     },
     methods:{
