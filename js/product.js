@@ -24,6 +24,14 @@ const app = new Vue({
             body.classList.add('lock');
             console.log(body);
             console.log(self.show);
+        },
+        closeLightbox(){
+            let self = this;
+            self.show = !self.show;
+
+            //取得body
+            let body = document.body;
+            body.classList.remove('lock');
         }
     }
 })

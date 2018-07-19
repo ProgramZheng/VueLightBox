@@ -24,29 +24,39 @@
 	top: 0;
 	z-index: 100;
 	> .control-tool{
-		background: white;
 		display: flex;
-		flex-direction: column;
-		top: 0;
-		z-index: 0;
+		justify-content: space-between;
+		// background: white;
+		order: 1;
+		// top: 0;
+		// z-index: 0;
+		// > .tool{
+		// 	display: inline-block;
+		// 	margin-left: auto;
+		// 	margin-right: auto;
+		// 	height: 100%;
+		// }
 		> .tool{
-			display: inline-block;
-			margin-left: auto;
-			margin-right: auto;
-			height: 100%;
+			> img{
+				background: rgb(255, 255, 255);
+				border: 2px rgb(255, 255, 255);
+				border-radius: 5px;
+				height: 42px;
+			}
 		}
-		> .close{
-			float: right;
-			background: white;
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-			height: 10%;
+		> .close-lightbox{
+			> img{
+				background: rgb(255, 255, 255);
+				border: 2px rgb(255, 255, 255);
+				border-radius: 5px;
+				height: 42px;
+			}
 		}
 	}
 	> .content{
+		order: 2;
 		// width: 90%;
-		height: 90%;
+		// height: 90%;
 		background: rgba(0,0,0,0.7);
 		color: #333;
 		// margin: auto;
@@ -54,11 +64,12 @@
 		// left: -25%;
 		// right: -25%;
 		// bottom: -25%;
-		position: fixed;
+		// position: fixed;
 		border: 3px solid #fff;
-		@include box-shadow(0 0 8px rgba(0,0,0,.3));
-		box-sizing: border-box;
+		// @include box-shadow(0 0 8px rgba(0,0,0,.3));
+		// box-sizing: border-box;
 		// margin-top: 10%;
+		height: 90%;
 		> .lightbox-image{
 			display: block;
 			width: 100%;
