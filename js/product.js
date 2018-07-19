@@ -9,6 +9,7 @@ const app = new Vue({
             lightboxImageKey:0,
             lastImageKey:0,
             lightboxImage:'',
+            lightboxDeg:0,
             imageBoard:null,
             canvasStatus:false
 
@@ -47,7 +48,7 @@ const app = new Vue({
         },
         rotateImage(){
             let self = this;
-            
+            self.lightboxDeg = self.lightboxDeg+90;
         },
         prevImage(){
             let self = this;
@@ -67,6 +68,8 @@ const app = new Vue({
             let self = this;
             self.controlShow = false;
             self.canvasStatus = !self.canvasStatus;
+            let nowImage = document.getElementById('nowImage');
+            console.log(nowImage);
             if(self.canvasStatus){
                 self.imageBoard = new DrawingBoard.Board('lightboxContent',{
                     controls: false,
