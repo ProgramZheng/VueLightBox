@@ -57,21 +57,19 @@
       height: 100%; }
   /* line 59, ../sass/product.scss */
   .lightbox .hide-control {
-    display: flex;
-    justify-content: space-between;
     position: fixed;
     width: 100%; }
-    /* line 64, ../sass/product.scss */
+    /* line 62, ../sass/product.scss */
     .lightbox .hide-control > .left-item {
       float: left; }
-      /* line 66, ../sass/product.scss */
+      /* line 64, ../sass/product.scss */
       .lightbox .hide-control > .left-item > .prev {
         border: 10px solid transparent;
         border-right: 20px solid rgba(58, 53, 53, 0.726); }
-    /* line 71, ../sass/product.scss */
+    /* line 69, ../sass/product.scss */
     .lightbox .hide-control > .right-item {
       float: right; }
-      /* line 73, ../sass/product.scss */
+      /* line 71, ../sass/product.scss */
       .lightbox .hide-control > .right-item > .next {
         border: 10px solid transparent;
         border-left: 20px solid rgba(58, 53, 53, 0.726); }
