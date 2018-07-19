@@ -43,8 +43,7 @@ const app = new Vue({
             self.lightboxImage = self.images[imagesKey];
 
             self.showHideControl();
-            // console.log(lightboxContent);
-            // console.log(self.show);
+
         },
         rotateImage(){
             let self = this;
@@ -69,16 +68,14 @@ const app = new Vue({
             self.controlShow = false;
             self.canvasStatus = !self.canvasStatus;
             if(self.canvasStatus){
-                console.log("qqqwew");
                 self.imageBoard = new DrawingBoard.Board('lightboxContent',{
                     controls: false,
-                    size: 20,
+                    size: 10,
                     background: self.lightboxImage,
                     webStorage: false,
                     droppable: true,
                     stretchImg: true
                 });
-                console.log(self.imageBoard);
             }
             else{
                 let drawingBoardControls = document.getElementsByClassName("drawing-board-controls");
