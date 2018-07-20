@@ -10,6 +10,9 @@ const app = new Vue({
             lastImageKey:0,
             lightboxImage:'',
             lightboxDeg:0,
+            lightboxGetStatus: false,
+            lightboxHeight:'100%',
+            lightboxWidth:'100%',
             imageBoard:null,
             canvasStatus:false
 
@@ -43,12 +46,48 @@ const app = new Vue({
             self.lightboxImageKey = imagesKey;
             self.lightboxImage = self.images[imagesKey];
 
+            //取得初始lightboxContent長寬
+            // let lightboxContent = document.getElementById('lightboxContent');
+            // console.log(lightboxContent);
+            // let lightboxContentStyle = getComputedStyle(document.getElementById("lightboxContent"));
+            // self.lightboxHeight = lightboxContentStyle.getPropertyValue('height');
+            // self.lightboxWidth = lightboxContentStyle.getPropertyValue('width');
+
             self.showHideControl();
 
         },
         rotateImage(){
             let self = this;
+            if(!self.lightboxGetStatus){
+                let lightboxContent = self.$refs.inlightboxContent;
+                let lightboxContentStyle = getComputedStyle(lightboxContent);
+                self.lightboxHeight = lightboxContentStyle.getPropertyValue('height');
+                self.lightboxWidth = lightboxContentStyle.getPropertyValue('width');
+                self.lightboxGetStatus = true;
+            }
             self.lightboxDeg = self.lightboxDeg+90;
+            self.checkRotateImage();
+        },
+        checkRotateImage(){
+            let self = this;
+            if(self.lightboxDeg===360){
+                self.lightboxDeg = 0;
+            }
+            switch(self.lightboxDeg){
+                case 90:
+                    lightboxContent.style.setProperty('height',self.lightboxWidth);
+                    break;
+                case 270:
+                    lightboxContent.style.setProperty('height',self.lightboxWidth);
+                    break;
+                case 0:
+                    lightboxContent.style.setProperty('height',self.lightboxHeight);
+                    break;
+                case 180:
+                    lightboxContent.style.setProperty('height',self.lightboxHeight);
+                    break;
+            }
+
         },
         prevImage(){
             let self = this;
@@ -69,7 +108,6 @@ const app = new Vue({
             self.controlShow = false;
             self.canvasStatus = !self.canvasStatus;
             let nowImage = document.getElementById('nowImage');
-            console.log(nowImage);
             if(self.canvasStatus){
                 self.imageBoard = new DrawingBoard.Board('lightboxContent',{
                     controls: false,
