@@ -2,6 +2,10 @@ const app = new Vue({
     el: '#app',
     data(){
         return{
+            //導覽列
+            hamburger:{},
+            navShow:false,
+
             lightboxShow:false,
             controlShow:false,
             controlTimer:null,
@@ -18,6 +22,12 @@ const app = new Vue({
 
         }
     },
+    created() {
+        let self = this;
+        if(document.body.offsetWidth>768){
+            self.navShow=true;
+        }
+    },
     mounted() {
         //TODO:編寫AJAX取得圖片
         let self = this;
@@ -26,6 +36,22 @@ const app = new Vue({
         self.lastImageKey = self.images.length-1;
     },
     methods:{
+        showNav(){
+            let self = this;
+            self.navShow = !self.navShow;
+            if(self.navShow){
+                self.hamburger = {
+                    transition: 'transform .8s',
+                    transform: 'rotate(90deg)'
+                }
+            }
+            else{
+                self.hamburger = {
+                    transition: 'transform .8s',
+                    transform: 'rotate(0deg)'
+                }
+            }
+        },
         showHideControl(){
             let self = this;
             if(!self.canvasStatus){
